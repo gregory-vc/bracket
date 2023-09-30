@@ -12,9 +12,10 @@ const (
 type TBracketForm uint8
 
 const (
-	TBracketSquare TBracketForm = 0x01
-	TBracketFigure TBracketForm = 0x02
-	TBracketRound  TBracketForm = 0x03
+	TBracketSquare    TBracketForm = 0x01
+	TBracketFigure    TBracketForm = 0x02
+	TBracketRound     TBracketForm = 0x03
+	TBracketMultiPlus TBracketForm = 0x04
 )
 
 type TBracketProp struct {
@@ -26,9 +27,11 @@ var bkt = map[rune]TBracketProp{
 	'[': {TBracketOpen, TBracketSquare},
 	'{': {TBracketOpen, TBracketFigure},
 	'(': {TBracketOpen, TBracketRound},
+	'*': {TBracketOpen, TBracketMultiPlus},
 	']': {TBracketClose, TBracketSquare},
 	'}': {TBracketClose, TBracketFigure},
 	')': {TBracketClose, TBracketRound},
+	'+': {TBracketClose, TBracketMultiPlus},
 }
 
 type StEl struct {

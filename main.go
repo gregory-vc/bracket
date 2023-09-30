@@ -11,7 +11,7 @@ func main() {
 	br := brackets.MustNewBracket()
 	res := br.Validate(bracesStr)
 	if res > 0 {
-		fmt.Println(res)
+		fmt.Println("Fail, err: ", res)
 	} else {
 		fmt.Println("Success")
 	}
